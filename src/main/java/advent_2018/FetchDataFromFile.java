@@ -24,6 +24,18 @@ public class FetchDataFromFile {
         return lines.collect(Collectors.toList());
     }
 
+    public List<String> fetchDataToStringList(String fileFromResources){
+        Stream<String> lines = null;
+        try {
+            lines = Files.lines(getPath(fileFromResources));
+        } catch (IOException e) {
+
+        } catch (URISyntaxException e) {
+            e.printStackTrace();
+        }
+        return lines.collect(Collectors.toList());
+    }
+
     private Path getPath(String fileFromResources) throws URISyntaxException {
         return Paths.get(getClass().getClassLoader()
                 .getResource(fileFromResources).toURI());
