@@ -10,8 +10,9 @@ public class Application {
         ImportMassFromFile importMassFromFile = new ImportMassFromFile();
         List<Integer> integers = importMassFromFile.importMassFromFile();
 
-        int sum = integers.stream().mapToInt(mass -> (mass / 3) - 2).sum();
-        System.out.println(sum);
-
+        int sumSimple = integers.stream().mapToInt(mass -> (mass / 3) - 2).sum();
+        System.out.println(sumSimple);
+        int sumComplex = integers.stream().mapToInt(mass -> importMassFromFile.massOfFuelToFuel(mass) - mass).sum();
+        System.out.println(sumComplex);
     }
 }

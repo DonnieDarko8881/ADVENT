@@ -21,4 +21,13 @@ public class ImportMassFromFile {
 
         return lines.collect(Collectors.toList());
     }
+
+    public int massOfFuelToFuel(int massOfFuel){
+        int mass = massOfFuel/3 -2;
+        if (mass<=0){
+            return massOfFuel;
+        } else
+            return massOfFuel + massOfFuelToFuel(mass);
+
+    }
 }
