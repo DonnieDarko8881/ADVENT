@@ -10,7 +10,8 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 
-public class FetchDataFromFileFromResources {
+public class FetchDataFromFile {
+
     public List<Integer> fetchDataToIntegerList(String fileFromResources) {
         Stream<Integer> lines = null;
         try {
@@ -26,7 +27,5 @@ public class FetchDataFromFileFromResources {
     private Path getPath(String fileFromResources) throws URISyntaxException {
         return Paths.get(getClass().getClassLoader()
                 .getResource(fileFromResources).toURI());
-
     }
-
 }
