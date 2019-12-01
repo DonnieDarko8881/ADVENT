@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 
-public class fetchDataFromFileFromResources {
+public class FetchDataFromFileFromResources {
     public List<Integer> fetchDataToIntegerList(String fileFromResources) {
         Stream<Integer> lines = null;
         try {
